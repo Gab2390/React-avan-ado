@@ -1,0 +1,46 @@
+* { box-sizing: border-box; }
+
+:root {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #25231f;
+  background: #f4f0e8;
+}
+
+body { margin: 0; min-width: 320px; }
+
+.app-container {
+  min-height: 100vh;
+  max-width: 680px !important;
+  margin: 0 auto !important;
+  padding: 48px 20px !important;
+}
+
+header { text-align: left !important; border-bottom: 2px solid #25231f; padding-bottom: 24px; }
+header h1 { margin: 0 0 8px; font-size: clamp(2rem, 7vw, 3.5rem); letter-spacing: 0; }
+header p { margin: 0; color: #686057; }
+
+todo-form, .todo-form { display: block; margin: 28px 0 18px; }
+.todo-form label, .todo-filters legend { font-weight: 700; margin-bottom: 8px; display: block; }
+.form-row { display: flex; gap: 8px; }
+input[type='text'], .form-row input { flex: 1; min-width: 0; border: 1px solid #aaa092; border-radius: 4px; padding: 12px; font: inherit; background: #fffdf8; }
+button { border: 0; border-radius: 4px; padding: 10px 14px; font: inherit; font-weight: 700; cursor: pointer; background: #d8e36f; color: #25231f; }
+button:hover { filter: brightness(0.95); }
+.todo-filters { display: flex; gap: 8px; border: 0; padding: 0; margin: 20px 0; }
+.todo-filters legend { width: 100%; }
+.todo-filters button { background: transparent; border: 1px solid #aaa092; }
+.todo-filters button.active { background: #25231f; color: #fffdf8; }
+.todo-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.todo-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px; background: #fffdf8; border-left: 4px solid #d8e36f; }
+.todo-item label { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.todo-item span { overflow-wrap: anywhere; }
+.todo-item.completed span { color: #817a70; text-decoration: line-through; }
+.todo-item input { accent-color: #25231f; width: 18px; height: 18px; }
+.delete-button { background: transparent; color: #9b382d; padding: 6px; flex-shrink: 0; }
+.empty-state { color: #686057; font-style: italic; }
+
+@media (max-width: 480px) {
+  .app-container { padding: 28px 16px !important; }
+  .form-row { flex-direction: column; }
+  .todo-filters { flex-wrap: wrap; }
+  .todo-filters legend { flex-basis: 100%; }
+}
